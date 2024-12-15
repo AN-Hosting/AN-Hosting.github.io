@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Gamepad, Search, Settings, Menu, X } from 'lucide-react';
+import { Gamepad, Search, Settings, Menu, X, Palette } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const games = [
@@ -58,7 +58,14 @@ export const Sidebar = () => {
             ))}
           </nav>
 
-          <div className="mt-auto">
+          <div className="mt-auto space-y-1">
+            <Link
+              to="/design-system"
+              className="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 transition-colors"
+            >
+              <Palette size={20} />
+              <span>Design System</span>
+            </Link>
             <Link
               to="/admin"
               className="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 transition-colors"

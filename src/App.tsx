@@ -8,6 +8,7 @@ import MinecraftPage from "./pages/games/MinecraftPage";
 import DayZPage from "./pages/games/DayZPage";
 import FiveMPage from "./pages/games/FiveMPage";
 import CS2Page from "./pages/games/CS2Page";
+import DesignSystem from "./pages/DesignSystem";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/games/dayz" element={<DayZPage />} />
           <Route path="/games/fivem" element={<FiveMPage />} />
           <Route path="/games/cs2" element={<CS2Page />} />
+          <Route path="/design-system" element={<DesignSystem />} />
           <Route path="/admin" element={<Index />} />
         </Routes>
       </BrowserRouter>
