@@ -1,7 +1,8 @@
 import { Layout } from '@/components/layout/Layout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-import { ArrowRight, Server, Package, Shield, AlertTriangle, Terminal, Settings } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { ArrowRight, Server, Package, Shield, AlertTriangle, Terminal, Settings, Link as LinkIcon, Hash, ChevronRight } from 'lucide-react';
 
 const DayZPage = () => {
   return (
@@ -20,16 +21,34 @@ const DayZPage = () => {
           </div>
         </div>
 
-        {/* Alert Section */}
-        <Alert className="glass-card border-yellow-500/50">
-          <AlertTriangle className="h-5 w-5 text-yellow-500" />
-          <AlertTitle className="text-yellow-500">Important Notice</AlertTitle>
-          <AlertDescription>
-            Make sure to backup your server files before making any configuration changes.
-          </AlertDescription>
-        </Alert>
+        {/* Stats Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {[
+            { label: 'Active Servers', value: '2,500+' },
+            { label: 'Players Online', value: '150K+' },
+            { label: 'Avg. Uptime', value: '99.9%' },
+            { label: 'Mod Support', value: '1000+' }
+          ].map((stat, i) => (
+            <Card key={i} className="game-card text-center">
+              <CardContent className="pt-6">
+                <div className="text-2xl font-bold text-primary">{stat.value}</div>
+                <div className="text-sm text-gray-400">{stat.label}</div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
 
-        {/* Quick Links */}
+        {/* Tags Section */}
+        <div className="flex flex-wrap gap-2">
+          {['Survival', 'Multiplayer', 'Open World', 'Zombies', 'PvP', 'Crafting'].map((tag, i) => (
+            <span key={i} className="px-3 py-1 text-sm rounded-full bg-primary/20 text-primary border border-primary/30 hover:bg-primary/30 transition-colors cursor-pointer">
+              <Hash className="inline-block w-3 h-3 mr-1" />
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        {/* Quick Links - 3 Columns */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {[
             { title: 'Server Setup', icon: Server, desc: 'Initial configuration' },
@@ -51,78 +70,89 @@ const DayZPage = () => {
           ))}
         </div>
 
-        {/* Server Requirements */}
-        <Card className="glass-card">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Settings className="h-5 w-5 text-primary" />
-              System Requirements
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <h3 className="text-lg font-semibold text-primary">Minimum Specs</h3>
-                <ul className="list-disc list-inside space-y-2 text-gray-300">
-                  <li>CPU: Intel Core i5-6600K</li>
-                  <li>RAM: 16GB DDR4</li>
-                  <li>Storage: 50GB SSD</li>
-                  <li>Network: 100Mbps connection</li>
-                </ul>
-              </div>
-              <div className="space-y-2">
-                <h3 className="text-lg font-semibold text-primary">Recommended Specs</h3>
-                <ul className="list-disc list-inside space-y-2 text-gray-300">
-                  <li>CPU: Intel Core i7-8700K</li>
-                  <li>RAM: 32GB DDR4</li>
-                  <li>Storage: 100GB NVMe SSD</li>
-                  <li>Network: 1Gbps connection</li>
-                </ul>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        {/* Alert Section */}
+        <Alert className="glass-card border-yellow-500/50">
+          <AlertTriangle className="h-5 w-5 text-yellow-500" />
+          <AlertTitle className="text-yellow-500">Important Notice</AlertTitle>
+          <AlertDescription>
+            Make sure to backup your server files before making any configuration changes.
+          </AlertDescription>
+        </Alert>
 
-        {/* Configuration Example */}
+        {/* Two Columns Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="space-y-4">
+            <h2 className="text-2xl font-bold text-primary">Getting Started</h2>
+            <p className="text-gray-300 leading-relaxed">
+              Setting up a DayZ server requires careful planning and configuration. Follow our step-by-step guide to ensure a smooth setup process.
+            </p>
+          </div>
+          <div className="space-y-4">
+            <h2 className="text-2xl font-bold text-primary">Requirements</h2>
+            <p className="text-gray-300 leading-relaxed">
+              Before starting, ensure your system meets the minimum requirements for hosting a DayZ server.
+            </p>
+          </div>
+        </div>
+
+        {/* Code Diff Example */}
         <Card className="glass-card">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Terminal className="h-5 w-5 text-primary" />
-              Configuration Example
+              Configuration Changes
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="code-block">
-              <pre className="text-gray-300">
-                {`# Example server configuration
-hostname = "My DayZ Server"
-password = ""
-maxPlayers = 60
-verifySignatures = 2
-forceSameBuild = 1
-template = "dayzOffline.chernarusplus"
-instanceId = 1
-loginQueueConcurrentPlayers = 5
-loginQueueMaxPlayers = 500`}
-              </pre>
+            <div className="code-block space-y-2">
+              <div className="text-red-500">- maxPlayers = 40</div>
+              <div className="text-green-500">+ maxPlayers = 60</div>
+              <div className="text-red-500">- serverPassword = ""</div>
+              <div className="text-green-500">+ serverPassword = "yourpassword"</div>
             </div>
           </CardContent>
         </Card>
 
-        {/* Blog-style Content */}
-        <div className="prose prose-invert max-w-none">
-          <h2 className="text-2xl font-bold text-primary mb-4">Getting Started</h2>
-          <p className="text-gray-300">
-            Setting up a DayZ server requires careful planning and configuration. This guide will walk you through the essential steps to get your server up and running, including installation, configuration, and maintenance procedures.
-          </p>
-          <h3 className="text-xl font-semibold text-primary mt-6 mb-3">Installation Steps</h3>
-          <ol className="list-decimal list-inside space-y-2 text-gray-300">
-            <li>Download the DayZ Server files</li>
-            <li>Configure your server settings</li>
-            <li>Set up server monitoring</li>
-            <li>Configure automated backups</li>
-            <li>Test your server configuration</li>
-          </ol>
+        {/* URL Cards - 2 Columns */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {[
+            { title: 'Official Documentation', url: 'https://dayz.com/docs' },
+            { title: 'Community Forums', url: 'https://forums.dayz.com' }
+          ].map((link, i) => (
+            <a key={i} href={link.url} target="_blank" rel="noopener noreferrer" 
+               className="game-card flex items-center gap-3 p-4 group">
+              <LinkIcon className="h-5 w-5 text-primary" />
+              <span className="flex-grow text-gray-300">{link.title}</span>
+              <ChevronRight className="h-4 w-4 text-primary transition-transform group-hover:translate-x-1" />
+            </a>
+          ))}
+        </div>
+
+        {/* Action Buttons */}
+        <div className="flex flex-wrap gap-4">
+          <Button className="relative overflow-hidden group">
+            <span className="relative z-10">Get Started</span>
+            <div className="absolute inset-0 bg-gradient-to-r from-primary to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity" />
+          </Button>
+          
+          <Button variant="outline" className="relative overflow-hidden group">
+            <span className="relative z-10">Documentation</span>
+            <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+          </Button>
+          
+          <Button variant="secondary" className="animate-pulse hover:animate-none">
+            Download Files
+          </Button>
+        </div>
+
+        {/* Six Column Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          {Array.from({ length: 6 }).map((_, i) => (
+            <Card key={i} className="game-card p-4 text-center">
+              <div className="text-xl font-bold text-primary">Step {i + 1}</div>
+              <div className="text-sm text-gray-400">Configuration</div>
+            </Card>
+          ))}
         </div>
       </div>
     </Layout>
