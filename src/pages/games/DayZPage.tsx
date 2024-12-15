@@ -13,7 +13,7 @@ const DayZPage = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-purple-900/50 to-indigo-900/50 backdrop-blur-sm" />
           <div className="relative z-10 space-y-4">
             <h1 className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400">
-              DayZ Server Setup Guide
+              Setup Guide
             </h1>
             <p className="text-xl text-gray-300">
               Complete guide to hosting and managing your DayZ server
