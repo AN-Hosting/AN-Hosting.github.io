@@ -5,48 +5,48 @@
 @layer base {
   :root {
     /* Light Theme */
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
+    --background: 222 25% 11%;
+    --foreground: 220 13% 95%;
+    --card: 222 25% 11%;
+    --card-foreground: 220 13% 95%;
+    --popover: 222 25% 11%;
+    --popover-foreground: 220 13% 95%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 222 47% 11%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 222 47% 11%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 222 47% 11%;
+    --accent-foreground: 210 40% 98%;
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 5.9% 10%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 222 47% 11%;
+    --input: 222 47% 11%;
+    --ring: 217 91% 60%;
     --radius: 0.75rem;
   }
 
   [data-theme="dark"] {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 263.4 70% 50.4%;
+    --background: 222 25% 11%;
+    --foreground: 220 13% 95%;
+    --card: 222 25% 11%;
+    --card-foreground: 220 13% 95%;
+    --popover: 222 25% 11%;
+    --popover-foreground: 220 13% 95%;
+    --primary: 217 91% 60%;
     --primary-foreground: 210 40% 98%;
-    --secondary: 217.2 32.6% 17.5%;
+    --secondary: 222 47% 11%;
     --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
+    --muted: 222 47% 11%;
     --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
+    --accent: 222 47% 11%;
     --accent-foreground: 210 40% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 263.4 70% 50.4%;
+    --border: 222 47% 11%;
+    --input: 222 47% 11%;
+    --ring: 217 91% 60%;
   }
 }
  
@@ -65,11 +65,11 @@
 }
 
 .neon-border {
-  @apply border border-primary/50 shadow-[0_0_15px_rgba(139,92,246,0.3)];
+  @apply border border-primary/50 shadow-[0_0_15px_rgba(59,130,246,0.3)];
 }
 
 .hover-glow {
-  @apply transition-all duration-300 hover:shadow-[0_0_20px_rgba(139,92,246,0.4)] hover:border-primary/80;
+  @apply transition-all duration-300 hover:shadow-[0_0_20px_rgba(59,130,246,0.4)] hover:border-primary/80;
 }
 
 .game-card {
@@ -82,17 +82,17 @@
 
 /* DayZ Specific Styles */
 .dayz-style-1 {
-  @apply bg-gradient-to-br from-gray-900 to-gray-800 text-gray-100 border-gray-700;
+  @apply bg-gradient-to-br from-[#0e141c] to-[#181a24] text-[#f3f4f6] border-[#3b82f6];
 }
 
 .dayz-style-2 {
-  @apply bg-gradient-to-br from-green-900 to-green-800 text-green-100 border-green-700;
+  @apply bg-gradient-to-br from-[#181a24] to-[#0e141c] text-[#f3f4f6] border-[#3b82f6];
 }
 
 .dayz-style-3 {
-  @apply bg-gradient-to-br from-blue-900 to-blue-800 text-blue-100 border-blue-700;
+  @apply bg-gradient-to-br from-[#3b82f6] to-[#60a5fa] text-white border-[#60a5fa];
 }
 
 .dayz-style-4 {
-  @apply bg-gradient-to-br from-red-900 to-red-800 text-red-100 border-red-700;
+  @apply bg-gradient-to-br from-[#60a5fa] to-[#3b82f6] text-white border-[#3b82f6];
 }
