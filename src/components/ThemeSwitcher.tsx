@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useTheme } from "./ThemeProvider";
-import { Palette } from "lucide-react";
+import { Sun, Moon } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -15,7 +15,11 @@ export function ThemeSwitcher() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline" size="icon">
-          <Palette className="h-[1.2rem] w-[1.2rem]" />
+          {theme === 'light' ? (
+            <Sun className="h-[1.2rem] w-[1.2rem]" />
+          ) : (
+            <Moon className="h-[1.2rem] w-[1.2rem]" />
+          )}
           <span className="sr-only">Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>
@@ -25,15 +29,6 @@ export function ThemeSwitcher() {
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme('dark')}>
           Dark
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme('professional')}>
-          Professional
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme('forest')}>
-          Forest
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme('ocean')}>
-          Ocean
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

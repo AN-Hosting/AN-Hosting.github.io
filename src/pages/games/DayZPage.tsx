@@ -8,20 +8,19 @@ const DayZPage = () => {
   return (
     <Layout>
       <div className="max-w-4xl mx-auto space-y-8">
-        {/* Hero Section */}
-        <div className="relative p-8 rounded-lg overflow-hidden glass-card neon-border">
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-900/50 to-indigo-900/50 backdrop-blur-sm" />
+        {/* Hero Section - Style 1 */}
+        <div className="relative p-8 rounded-lg overflow-hidden glass-card neon-border dayz-style-1">
           <div className="relative z-10 space-y-4">
-            <h1 className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400">
+            <h1 className="text-5xl font-bold">
               Setup Guide
             </h1>
-            <p className="text-xl text-gray-300">
+            <p className="text-xl">
               Complete guide to hosting and managing your DayZ server
             </p>
           </div>
         </div>
 
-        {/* Stats Grid */}
+        {/* Stats Grid - Style 2 */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
             { label: 'Active Servers', value: '2,500+' },
@@ -29,51 +28,41 @@ const DayZPage = () => {
             { label: 'Avg. Uptime', value: '99.9%' },
             { label: 'Mod Support', value: '1000+' }
           ].map((stat, i) => (
-            <Card key={i} className="game-card text-center">
+            <Card key={i} className="game-card dayz-style-2 text-center">
               <CardContent className="pt-6">
-                <div className="text-2xl font-bold text-primary">{stat.value}</div>
-                <div className="text-sm text-gray-400">{stat.label}</div>
+                <div className="text-2xl font-bold">{stat.value}</div>
+                <div className="text-sm opacity-80">{stat.label}</div>
               </CardContent>
             </Card>
           ))}
         </div>
 
-        {/* Tags Section */}
-        <div className="flex flex-wrap gap-2">
-          {['Survival', 'Multiplayer', 'Open World', 'Zombies', 'PvP', 'Crafting'].map((tag, i) => (
-            <span key={i} className="px-3 py-1 text-sm rounded-full bg-primary/20 text-primary border border-primary/30 hover:bg-primary/30 transition-colors cursor-pointer">
-              <Hash className="inline-block w-3 h-3 mr-1" />
-              {tag}
-            </span>
-          ))}
-        </div>
-
-        {/* Quick Links - 3 Columns */}
+        {/* Quick Links - Style 3 */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {[
             { title: 'Server Setup', icon: Server, desc: 'Initial configuration' },
             { title: 'Mod Management', icon: Package, desc: 'Install and manage mods' },
             { title: 'Security', icon: Shield, desc: 'Secure your server' }
           ].map((item, i) => (
-            <Card key={i} className="game-card group cursor-pointer">
+            <Card key={i} className="game-card dayz-style-3 group cursor-pointer">
               <CardHeader>
                 <div className="flex items-center gap-2">
-                  <item.icon className="h-5 w-5 text-primary" />
+                  <item.icon className="h-5 w-5" />
                   <CardTitle className="text-lg">{item.title}</CardTitle>
                 </div>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-400">{item.desc}</p>
-                <ArrowRight className="h-4 w-4 mt-2 text-primary transition-transform group-hover:translate-x-2" />
+                <p className="opacity-80">{item.desc}</p>
+                <ArrowRight className="h-4 w-4 mt-2 transition-transform group-hover:translate-x-2" />
               </CardContent>
             </Card>
           ))}
         </div>
 
-        {/* Alert Section */}
-        <Alert className="glass-card border-yellow-500/50">
-          <AlertTriangle className="h-5 w-5 text-yellow-500" />
-          <AlertTitle className="text-yellow-500">Important Notice</AlertTitle>
+        {/* Alert Section - Style 4 */}
+        <Alert className="glass-card dayz-style-4">
+          <AlertTriangle className="h-5 w-5" />
+          <AlertTitle>Important Notice</AlertTitle>
           <AlertDescription>
             Make sure to backup your server files before making any configuration changes.
           </AlertDescription>

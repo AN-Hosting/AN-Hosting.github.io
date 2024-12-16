@@ -4,13 +4,13 @@
  
 @layer base {
   :root {
-    /* Default Light Theme */
-    --background: 240 5.9% 10%;
-    --foreground: 0 0% 98%;
-    --card: 240 5.9% 10%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 5.9% 10%;
-    --popover-foreground: 0 0% 98%;
+    /* Light Theme */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
     --primary: 240 5.9% 10%;
     --primary-foreground: 0 0% 98%;
     --secondary: 240 4.8% 95.9%;
@@ -28,12 +28,12 @@
   }
 
   [data-theme="dark"] {
-    --background: 263.4 70% 50.4%;
-    --foreground: 210 40% 98%;
-    --card: 263.4 70% 50.4%;
-    --card-foreground: 210 40% 98%;
-    --popover: 263.4 70% 50.4%;
-    --popover-foreground: 210 40% 98%;
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
     --primary: 263.4 70% 50.4%;
     --primary-foreground: 210 40% 98%;
     --secondary: 217.2 32.6% 17.5%;
@@ -47,72 +47,6 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 263.4 70% 50.4%;
-  }
-
-  [data-theme="professional"] {
-    --background: 220 85% 40%;
-    --foreground: 220 14% 96%;
-    --card: 220 85% 40%;
-    --card-foreground: 220 14% 96%;
-    --popover: 220 85% 40%;
-    --popover-foreground: 220 14% 96%;
-    --primary: 220 85% 40%;
-    --primary-foreground: 220 14% 96%;
-    --secondary: 220 14% 90%;
-    --secondary-foreground: 220 14% 5%;
-    --muted: 220 14% 90%;
-    --muted-foreground: 220 14% 40%;
-    --accent: 220 14% 90%;
-    --accent-foreground: 220 14% 5%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 220 14% 85%;
-    --input: 220 14% 85%;
-    --ring: 220 85% 40%;
-  }
-
-  [data-theme="forest"] {
-    --background: 142 72% 29%;
-    --foreground: 150 40% 96%;
-    --card: 142 72% 29%;
-    --card-foreground: 150 40% 96%;
-    --popover: 142 72% 29%;
-    --popover-foreground: 150 40% 96%;
-    --primary: 142 72% 29%;
-    --primary-foreground: 150 40% 96%;
-    --secondary: 150 40% 90%;
-    --secondary-foreground: 150 40% 5%;
-    --muted: 150 40% 90%;
-    --muted-foreground: 150 40% 40%;
-    --accent: 150 40% 90%;
-    --accent-foreground: 150 40% 5%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 150 40% 85%;
-    --input: 150 40% 85%;
-    --ring: 142 72% 29%;
-  }
-
-  [data-theme="ocean"] {
-    --background: 199 89% 48%;
-    --foreground: 200 80% 98%;
-    --card: 199 89% 48%;
-    --card-foreground: 200 80% 98%;
-    --popover: 199 89% 48%;
-    --popover-foreground: 200 80% 98%;
-    --primary: 199 89% 48%;
-    --primary-foreground: 200 80% 98%;
-    --secondary: 200 80% 90%;
-    --secondary-foreground: 200 80% 5%;
-    --muted: 200 80% 90%;
-    --muted-foreground: 200 80% 40%;
-    --accent: 200 80% 90%;
-    --accent-foreground: 200 80% 5%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 200 80% 85%;
-    --input: 200 80% 85%;
-    --ring: 199 89% 48%;
   }
 }
  
@@ -144,4 +78,21 @@
 
 .code-block {
   @apply bg-black/40 border border-white/10 rounded-lg p-4 font-mono text-sm;
+}
+
+/* DayZ Specific Styles */
+.dayz-style-1 {
+  @apply bg-gradient-to-br from-gray-900 to-gray-800 text-gray-100 border-gray-700;
+}
+
+.dayz-style-2 {
+  @apply bg-gradient-to-br from-green-900 to-green-800 text-green-100 border-green-700;
+}
+
+.dayz-style-3 {
+  @apply bg-gradient-to-br from-blue-900 to-blue-800 text-blue-100 border-blue-700;
+}
+
+.dayz-style-4 {
+  @apply bg-gradient-to-br from-red-900 to-red-800 text-red-100 border-red-700;
 }
