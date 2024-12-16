@@ -3,6 +3,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight, Check, AlertTriangle, Info } from 'lucide-react';
+import { GradientCards } from '@/components/design/GradientCards';
+import { ColorPalettes } from '@/components/design/ColorPalettes';
 
 const DesignSystem = () => {
   return (
@@ -23,27 +25,10 @@ const DesignSystem = () => {
         </section>
 
         {/* Colors */}
-        <section className="space-y-6">
-          <h2 className="text-2xl font-bold border-b border-white/10 pb-2">Colors</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="space-y-2">
-              <div className="h-20 rounded-lg bg-primary"></div>
-              <p className="text-sm font-medium">Primary</p>
-            </div>
-            <div className="space-y-2">
-              <div className="h-20 rounded-lg bg-secondary"></div>
-              <p className="text-sm font-medium">Secondary</p>
-            </div>
-            <div className="space-y-2">
-              <div className="h-20 rounded-lg bg-accent"></div>
-              <p className="text-sm font-medium">Accent</p>
-            </div>
-            <div className="space-y-2">
-              <div className="h-20 rounded-lg bg-destructive"></div>
-              <p className="text-sm font-medium">Destructive</p>
-            </div>
-          </div>
-        </section>
+        <ColorPalettes />
+
+        {/* Gradient Cards */}
+        <GradientCards />
 
         {/* Buttons */}
         <section className="space-y-6">
