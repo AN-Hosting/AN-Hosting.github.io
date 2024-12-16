@@ -5,12 +5,12 @@
 @layer base {
   :root {
     /* Default Light Theme */
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
+    --background: 240 5.9% 10%;
+    --foreground: 0 0% 98%;
+    --card: 240 5.9% 10%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 5.9% 10%;
+    --popover-foreground: 0 0% 98%;
     --primary: 240 5.9% 10%;
     --primary-foreground: 0 0% 98%;
     --secondary: 240 4.8% 95.9%;
@@ -28,12 +28,12 @@
   }
 
   [data-theme="dark"] {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
+    --background: 263.4 70% 50.4%;
+    --foreground: 210 40% 98%;
+    --card: 263.4 70% 50.4%;
+    --card-foreground: 210 40% 98%;
+    --popover: 263.4 70% 50.4%;
+    --popover-foreground: 210 40% 98%;
     --primary: 263.4 70% 50.4%;
     --primary-foreground: 210 40% 98%;
     --secondary: 217.2 32.6% 17.5%;
@@ -50,12 +50,12 @@
   }
 
   [data-theme="professional"] {
-    --background: 220 14% 96%;
-    --foreground: 220 14% 5%;
-    --card: 0 0% 100%;
-    --card-foreground: 220 14% 5%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 14% 5%;
+    --background: 220 85% 40%;
+    --foreground: 220 14% 96%;
+    --card: 220 85% 40%;
+    --card-foreground: 220 14% 96%;
+    --popover: 220 85% 40%;
+    --popover-foreground: 220 14% 96%;
     --primary: 220 85% 40%;
     --primary-foreground: 220 14% 96%;
     --secondary: 220 14% 90%;
@@ -72,12 +72,12 @@
   }
 
   [data-theme="forest"] {
-    --background: 150 40% 96%;
-    --foreground: 150 40% 5%;
-    --card: 0 0% 100%;
-    --card-foreground: 150 40% 5%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 150 40% 5%;
+    --background: 142 72% 29%;
+    --foreground: 150 40% 96%;
+    --card: 142 72% 29%;
+    --card-foreground: 150 40% 96%;
+    --popover: 142 72% 29%;
+    --popover-foreground: 150 40% 96%;
     --primary: 142 72% 29%;
     --primary-foreground: 150 40% 96%;
     --secondary: 150 40% 90%;
@@ -94,12 +94,12 @@
   }
 
   [data-theme="ocean"] {
-    --background: 200 80% 98%;
-    --foreground: 200 80% 5%;
-    --card: 0 0% 100%;
-    --card-foreground: 200 80% 5%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 200 80% 5%;
+    --background: 199 89% 48%;
+    --foreground: 200 80% 98%;
+    --card: 199 89% 48%;
+    --card-foreground: 200 80% 98%;
+    --popover: 199 89% 48%;
+    --popover-foreground: 200 80% 98%;
     --primary: 199 89% 48%;
     --primary-foreground: 200 80% 98%;
     --secondary: 200 80% 90%;
