@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Gamepad, Search, Settings, Menu, X, Palette } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { ThemeSwitcher } from '../ThemeSwitcher';
 
 const games = [
   { id: 'minecraft', name: 'Minecraft', icon: '🎮' },
@@ -31,10 +32,13 @@ export const Sidebar = () => {
         )}
       >
         <div className="flex flex-col h-full p-4">
-          <Link to="/" className="flex items-center gap-2 p-2 mb-8">
-            <Gamepad className="w-6 h-6 text-primary" />
-            <span className="font-bold text-lg">GameHost Docs</span>
-          </Link>
+          <div className="flex items-center justify-between mb-8">
+            <Link to="/" className="flex items-center gap-2 p-2">
+              <Gamepad className="w-6 h-6 text-primary" />
+              <span className="font-bold text-lg">GameHost Docs</span>
+            </Link>
+            <ThemeSwitcher />
+          </div>
 
           <div className="relative mb-6">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" />
