@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Gamepad, Search, Settings, Menu, X, Palette } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { ThemeSwitcher } from '../ThemeSwitcher';
@@ -54,7 +54,11 @@ const games = [
 
 export const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true);
+  const location = useLocation();
 
+  // Détermine quel jeu est actuellement actif en fonction de l'URL
+  const activeGame = games.find(game => location.pathname.includes(`/games/${game.id}`));
+  
   return (
     <>
       <button
@@ -90,7 +94,11 @@ export const Sidebar = () => {
             />
           </div>
 
-          <Accordion type="single" collapsible className="w-full">
+          <Accordion 
+            type="multiple" 
+            className="w-full"
+            defaultValue={activeGame ? [activeGame.id] : []}
+          >
             {games.map((game) => (
               <AccordionItem key={game.id} value={game.id} className="border-white/10">
                 <AccordionTrigger className="hover:no-underline py-2">
@@ -105,7 +113,12 @@ export const Sidebar = () => {
                       <Link
                         key={category.id}
                         to={category.path}
-                        className="block py-2 px-2 rounded-lg hover:bg-white/5 transition-colors"
+                        className={cn(
+                          "block py-2 px-2 rounded-lg transition-colors",
+                          location.pathname === category.path 
+                            ? "bg-accent text-accent-foreground" 
+                            : "hover:bg-white/5"
+                        )}
                       >
                         {category.name}
                       </Link>
