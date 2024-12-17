@@ -3,12 +3,53 @@ import { Link } from 'react-router-dom';
 import { Gamepad, Search, Settings, Menu, X, Palette } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { ThemeSwitcher } from '../ThemeSwitcher';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 const games = [
-  { id: 'minecraft', name: 'Minecraft', icon: '🎮' },
-  { id: 'dayz', name: 'DayZ', icon: '🎮' },
-  { id: 'fivem', name: 'FiveM', icon: '🎮' },
-  { id: 'cs2', name: 'Counter-Strike 2', icon: '🎮' },
+  {
+    id: 'minecraft',
+    name: 'Minecraft',
+    icon: '🎮',
+    categories: [
+      { id: 'installation', name: 'Installation', path: '/games/minecraft/installation' },
+      { id: 'configuration', name: 'Configuration', path: '/games/minecraft/configuration' },
+      { id: 'plugins', name: 'Plugins', path: '/games/minecraft/plugins' },
+      { id: 'maintenance', name: 'Maintenance', path: '/games/minecraft/maintenance' },
+    ]
+  },
+  {
+    id: 'dayz',
+    name: 'DayZ',
+    icon: '🎮',
+    categories: [
+      { id: 'setup', name: 'Installation', path: '/games/dayz/setup' },
+      { id: 'mods', name: 'Mods', path: '/games/dayz/mods' },
+      { id: 'admin', name: 'Administration', path: '/games/dayz/admin' },
+      { id: 'backup', name: 'Sauvegardes', path: '/games/dayz/backup' },
+    ]
+  },
+  {
+    id: 'fivem',
+    name: 'FiveM',
+    icon: '🎮',
+    categories: [
+      { id: 'setup', name: 'Installation', path: '/games/fivem/setup' },
+      { id: 'resources', name: 'Resources', path: '/games/fivem/resources' },
+      { id: 'scripts', name: 'Scripts', path: '/games/fivem/scripts' },
+      { id: 'database', name: 'Base de données', path: '/games/fivem/database' },
+    ]
+  },
+  {
+    id: 'cs2',
+    name: 'Counter-Strike 2',
+    icon: '🎮',
+    categories: [
+      { id: 'setup', name: 'Installation', path: '/games/cs2/setup' },
+      { id: 'config', name: 'Configuration', path: '/games/cs2/config' },
+      { id: 'plugins', name: 'Plugins', path: '/games/cs2/plugins' },
+      { id: 'maintenance', name: 'Maintenance', path: '/games/cs2/maintenance' },
+    ]
+  },
 ];
 
 export const Sidebar = () => {
@@ -49,18 +90,31 @@ export const Sidebar = () => {
             />
           </div>
 
-          <nav className="space-y-1">
+          <Accordion type="single" collapsible className="w-full">
             {games.map((game) => (
-              <Link
-                key={game.id}
-                to={`/games/${game.id}`}
-                className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/5 transition-colors"
-              >
-                <span className="text-xl">{game.icon}</span>
-                <span>{game.name}</span>
-              </Link>
+              <AccordionItem key={game.id} value={game.id} className="border-white/10">
+                <AccordionTrigger className="hover:no-underline py-2">
+                  <div className="flex items-center gap-3">
+                    <span className="text-xl">{game.icon}</span>
+                    <span>{game.name}</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <div className="space-y-1 ml-9">
+                    {game.categories.map((category) => (
+                      <Link
+                        key={category.id}
+                        to={category.path}
+                        className="block py-2 px-2 rounded-lg hover:bg-white/5 transition-colors"
+                      >
+                        {category.name}
+                      </Link>
+                    ))}
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
             ))}
-          </nav>
+          </Accordion>
 
           <div className="mt-auto space-y-1">
             <Link
