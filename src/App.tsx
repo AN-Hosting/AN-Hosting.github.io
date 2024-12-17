@@ -5,7 +5,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "./components/ThemeProvider";
 import Index from "./pages/Index";
-import AdminPanel from "./pages/admin/AdminPanel";
 import MinecraftPage from "./pages/games/MinecraftPage";
 import DayZPage from "./pages/games/DayZPage";
 import FiveMPage from "./pages/games/FiveMPage";
@@ -44,7 +43,6 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/admin" element={<AdminPanel />} />
             
             {/* Minecraft Routes */}
             <Route path="/games/minecraft" element={<MinecraftPage />} />
@@ -75,6 +73,7 @@ const App = () => (
             <Route path="/games/cs2/maintenance" element={<CS2Maintenance />} />
             
             <Route path="/design-system" element={<DesignSystem />} />
+            <Route path="/admin" element={<Index />} />
           </Routes>
         </BrowserRouter>
       </TooltipProvider>
