@@ -10,7 +10,7 @@ import { CodeBlocks } from '@/components/design/CodeBlocks';
 import { GridLayouts } from '@/components/design/GridLayouts';
 import { Stats } from '@/components/design/Stats';
 
-const DesignSystem = () => {
+export const DesignSystem = () => {
   return (
     <Layout>
       <div className="max-w-6xl mx-auto space-y-12">
@@ -28,5 +28,3 @@ const DesignSystem = () => {
     </Layout>
   );
 };
-
-export default DesignSystem;

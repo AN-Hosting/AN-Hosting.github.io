@@ -28,7 +28,7 @@ const games = [
   }
 ];
 
-const Index = () => {
+export const Index = () => {
   return (
     <Layout>
       <div className="max-w-4xl mx-auto">
@@ -75,5 +75,3 @@ const Index = () => {
     </Layout>
   );
 };
-
-export default Index;

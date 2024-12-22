@@ -1,7 +1,7 @@
 import { Layout } from '@/components/layout/Layout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
-const CS2Config = () => {
+export const CS2Config = () => {
   return (
     <Layout>
       <div className="max-w-4xl mx-auto space-y-8">
@@ -18,5 +18,3 @@ const CS2Config = () => {
     </Layout>
   );
 };
-
-export default CS2Config;

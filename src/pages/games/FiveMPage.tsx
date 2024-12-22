@@ -1,7 +1,7 @@
 import { Layout } from '@/components/layout/Layout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
-const FiveMPage = () => {
+export const FiveMPage = () => {
   return (
     <Layout>
       <div className="max-w-4xl mx-auto space-y-8">
@@ -45,5 +45,3 @@ load_server_icon myLogo.png`}
     </Layout>
   );
 };
-
-export default FiveMPage;

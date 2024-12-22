@@ -1,7 +1,7 @@
 import { Layout } from '@/components/layout/Layout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
-const DayZAdmin = () => {
+export const DayZAdmin = () => {
   return (
     <Layout>
       <div className="max-w-4xl mx-auto space-y-8">
@@ -18,5 +18,3 @@ const DayZAdmin = () => {
     </Layout>
   );
 };
-
-export default DayZAdmin;

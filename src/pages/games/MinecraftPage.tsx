@@ -1,7 +1,7 @@
 import { Layout } from '@/components/layout/Layout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
-const MinecraftPage = () => {
+export const MinecraftPage = () => {
   return (
     <Layout>
       <div className="max-w-4xl mx-auto space-y-8">
@@ -47,5 +47,3 @@ spawn-protection=16`}
     </Layout>
   );
 };
-
-export default MinecraftPage;

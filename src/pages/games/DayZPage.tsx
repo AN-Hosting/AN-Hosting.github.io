@@ -4,7 +4,7 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Server, Package, Shield, AlertTriangle, Terminal, Settings, Link as LinkIcon, Hash, ChevronRight } from 'lucide-react';
 
-const DayZPage = () => {
+export const DayZPage = () => {
   return (
     <Layout>
       <div className="max-w-4xl mx-auto space-y-8">
@@ -147,5 +147,3 @@ const DayZPage = () => {
     </Layout>
   );
 };
-
-export default DayZPage;

@@ -1,7 +1,7 @@
 import { Layout } from '@/components/layout/Layout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
-const CS2Page = () => {
+export const CS2Page = () => {
   return (
     <Layout>
       <div className="max-w-4xl mx-auto space-y-8">
@@ -48,5 +48,3 @@ sv_password "your_password"`}
     </Layout>
   );
 };
-
-export default CS2Page;
