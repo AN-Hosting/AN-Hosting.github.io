@@ -20,15 +20,15 @@ export function ThemeSwitcher() {
           ) : (
             <Moon className="h-[1.2rem] w-[1.2rem]" />
           )}
-          <span className="sr-only">Toggle theme</span>
+          <span className="sr-only">Changer le thème</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuItem onClick={() => setTheme('light')}>
-          Light
+          Clair
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme('dark')}>
-          Dark
+          Sombre
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
