@@ -5,25 +5,25 @@ const games = [
   {
     id: 'minecraft',
     name: 'Minecraft',
-    description: 'Set up and manage your Minecraft server with ease.',
+    description: 'Configurez et gérez votre serveur Minecraft facilement.',
     icon: '🎮'
   },
   {
     id: 'dayz',
     name: 'DayZ',
-    description: 'Host your own DayZ server and customize it to your needs.',
+    description: 'Hébergez votre propre serveur DayZ et personnalisez-le selon vos besoins.',
     icon: '🎮'
   },
   {
     id: 'fivem',
     name: 'FiveM',
-    description: 'Create and manage your FiveM server for GTA V multiplayer.',
+    description: 'Créez et gérez votre serveur FiveM pour GTA V multijoueur.',
     icon: '🎮'
   },
   {
     id: 'cs2',
     name: 'Counter-Strike 2',
-    description: 'Configure and optimize your CS2 server for competitive play.',
+    description: 'Configurez et optimisez votre serveur CS2 pour le jeu compétitif.',
     icon: '🎮'
   }
 ];
@@ -34,10 +34,10 @@ const Index = () => {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400">
-            Game Server Documentation
+            Documentation
           </h1>
           <p className="text-lg text-muted-foreground">
-            Comprehensive guides for setting up and managing your game servers
+            Guides complets pour configurer et gérer vos serveurs de jeux
           </p>
         </div>
 
@@ -58,17 +58,17 @@ const Index = () => {
         </div>
 
         <div className="mt-12 p-6 glass-card text-center">
-          <h2 className="text-xl font-semibold mb-4">Need Help?</h2>
+          <h2 className="text-xl font-semibold mb-4">Besoin d'aide ?</h2>
           <p className="text-muted-foreground mb-4">
-            Can't find what you're looking for? Check out our community forums or contact support.
+            Vous ne trouvez pas ce que vous cherchez ? Consultez notre discord communautaires.
           </p>
           <div className="flex justify-center gap-4">
-            <button className="px-4 py-2 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors">
-              Visit Forums
-            </button>
-            <button className="px-4 py-2 rounded-lg border border-primary/50 hover:bg-primary/10 transition-colors">
-              Contact Support
-            </button>
+            <a href="https://discord.gg/anhosting" target="_blank" className="px-4 py-2 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors">
+              Visiter le Discord
+            </a>
+            {/* <button className="px-4 py-2 rounded-lg border border-primary/50 hover:bg-primary/10 transition-colors">
+              Contacter le Support
+            </button> */}
           </div>
         </div>
       </div>

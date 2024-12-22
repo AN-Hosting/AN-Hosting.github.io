@@ -3,32 +3,32 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 export const Cards = () => {
   return (
     <section className="space-y-6">
-      <h2 className="text-2xl font-bold border-b border-white/10 pb-2">Cards</h2>
+      <h2 className="text-2xl font-bold border-b border-white/10 pb-2">Cartes</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <Card className="game-card">
           <CardHeader>
-            <CardTitle>Standard Card</CardTitle>
+            <CardTitle>Carte standard</CardTitle>
           </CardHeader>
           <CardContent>
-            <p>Basic card with title and content.</p>
+            <p>Carte basique avec titre et contenu.</p>
           </CardContent>
         </Card>
         
         <Card className="glass-card">
           <CardHeader>
-            <CardTitle>Glass Card</CardTitle>
+            <CardTitle>Carte en verre</CardTitle>
           </CardHeader>
           <CardContent>
-            <p>Glassmorphism effect card.</p>
+            <p>Carte avec effet de verre.</p>
           </CardContent>
         </Card>
 
         <Card className="game-card neon-border">
           <CardHeader>
-            <CardTitle>Neon Card</CardTitle>
+            <CardTitle>Carte néon</CardTitle>
           </CardHeader>
           <CardContent>
-            <p>Card with neon border effect.</p>
+            <p>Carte avec effet de bordure néon.</p>
           </CardContent>
         </Card>
       </div>

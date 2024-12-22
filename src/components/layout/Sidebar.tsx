@@ -34,7 +34,7 @@ const games = [
     icon: '🎮',
     categories: [
       { id: 'setup', name: 'Installation', path: '/games/fivem/setup' },
-      { id: 'resources', name: 'Resources', path: '/games/fivem/resources' },
+      { id: 'resources', name: 'Ressources', path: '/games/fivem/resources' },
       { id: 'scripts', name: 'Scripts', path: '/games/fivem/scripts' },
       { id: 'database', name: 'Base de données', path: '/games/fivem/database' },
     ]
@@ -56,7 +56,6 @@ export const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true);
   const location = useLocation();
 
-  // Détermine quel jeu est actuellement actif en fonction de l'URL
   const activeGame = games.find(game => location.pathname.includes(`/games/${game.id}`));
   
   return (
@@ -80,7 +79,7 @@ export const Sidebar = () => {
           <div className="flex items-center justify-between mb-8">
             <Link to="/" className="flex items-center gap-2 p-2">
               <Gamepad className="w-6 h-6 text-primary" />
-              <span className="font-bold text-lg">GameHost Docs</span>
+              <span className="font-bold text-lg">AN Hosting</span>
             </Link>
             <ThemeSwitcher />
           </div>
@@ -89,7 +88,7 @@ export const Sidebar = () => {
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" />
             <input
               type="search"
-              placeholder="Search docs..."
+              placeholder="Rechercher..."
               className="w-full pl-10 pr-4 py-2 bg-background/50 rounded-lg border border-white/10 focus:outline-none focus:ring-2 focus:ring-primary/50"
             />
           </div>
@@ -142,7 +141,7 @@ export const Sidebar = () => {
               className="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 transition-colors"
             >
               <Settings size={20} />
-              <span>Admin Panel</span>
+              <span>Administration</span>
             </Link>
           </div>
         </div>
