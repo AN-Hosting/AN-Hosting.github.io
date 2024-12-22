@@ -23,9 +23,9 @@ const games = [
     icon: '🎮',
     categories: [
       { id: 'setup', name: 'Installation', path: '/games/dayz/setup' },
+      { id: 'configuration', name: 'Configuration', path: '/games/dayz/configuration' },
+      { id: 'performance', name: 'Performance', path: '/games/dayz/performance' },
       { id: 'mods', name: 'Mods', path: '/games/dayz/mods' },
-      { id: 'admin', name: 'Administration', path: '/games/dayz/admin' },
-      { id: 'backup', name: 'Sauvegardes', path: '/games/dayz/backup' },
     ]
   },
   {
