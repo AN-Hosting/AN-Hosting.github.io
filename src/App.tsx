@@ -4,35 +4,35 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "./components/ThemeProvider";
-import Index from "./pages/Index";
-import MinecraftPage from "./pages/games/MinecraftPage";
-import DayZPage from "./pages/games/DayZPage";
-import FiveMPage from "./pages/games/FiveMPage";
-import CS2Page from "./pages/games/CS2Page";
-import DesignSystem from "./pages/DesignSystem";
+import { Index } from "./pages/Index";
+import { MinecraftPage } from "./pages/games/MinecraftPage";
+import { DayZPage } from "./pages/games/DayZPage";
+import { FiveMPage } from "./pages/games/FiveMPage";
+import { CS2Page } from "./pages/games/CS2Page";
+import { DesignSystem } from "./pages/DesignSystem";
 
 // Import new subcategory pages
-import MinecraftInstallation from "./pages/games/minecraft/Installation";
-import MinecraftConfiguration from "./pages/games/minecraft/Configuration";
-import MinecraftPlugins from "./pages/games/minecraft/Plugins";
-import MinecraftMaintenance from "./pages/games/minecraft/Maintenance";
+import { MinecraftInstallation } from "./pages/games/minecraft/Installation";
+import { MinecraftConfiguration } from "./pages/games/minecraft/Configuration";
+import { MinecraftPlugins } from "./pages/games/minecraft/Plugins";
+import { MinecraftMaintenance } from "./pages/games/minecraft/Maintenance";
 
 import { DayZSetup } from "./pages/games/dayz/Setup";
 import { DayZMods } from "./pages/games/dayz/Mods";
-import DayZAdmin from "./pages/games/dayz/Admin";
-import DayZBackup from "./pages/games/dayz/Backup";
+import { DayZAdmin } from "./pages/games/dayz/Admin";
+import { DayZBackup } from "./pages/games/dayz/Backup";
 import { DayZConfiguration } from "./pages/games/dayz/Configuration";
 import { DayZPerformance } from "./pages/games/dayz/Performance";
 
-import FiveMSetup from "./pages/games/fivem/Setup";
-import FiveMResources from "./pages/games/fivem/Resources";
-import FiveMScripts from "./pages/games/fivem/Scripts";
-import FiveMDatabase from "./pages/games/fivem/Database";
+import { FiveMSetup } from "./pages/games/fivem/Setup";
+import { FiveMResources } from "./pages/games/fivem/Resources";
+import { FiveMScripts } from "./pages/games/fivem/Scripts";
+import { FiveMDatabase } from "./pages/games/fivem/Database";
 
-import CS2Setup from "./pages/games/cs2/Setup";
-import CS2Config from "./pages/games/cs2/Config";
-import CS2Plugins from "./pages/games/cs2/Plugins";
-import CS2Maintenance from "./pages/games/cs2/Maintenance";
+import { CS2Setup } from "./pages/games/cs2/Setup";
+import { CS2Config } from "./pages/games/cs2/Config";
+import { CS2Plugins } from "./pages/games/cs2/Plugins";
+import { CS2Maintenance } from "./pages/games/cs2/Maintenance";
 
 import { Error404 } from "./pages/Error404";
 import { ErrorBoundary } from "./pages/ErrorBoundary";
