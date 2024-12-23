@@ -1,5 +1,5 @@
 import { Gamepad, Menu, Palette, Search, Settings, X } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import {
   Accordion,
@@ -10,14 +10,34 @@ import {
 import { cn } from '@/lib/utils';
 import { ThemeSwitcher } from '../ThemeSwitcher';
 
+// Type pour les mots-clés de recherche
+type SearchableCategory = {
+  id: string;
+  name: string;
+  path: string;
+  keywords?: string[]; // Mots-clés associés à cette page
+  description?: string; // Description courte du contenu
+};
+
 const games = [
   {
     id: 'minecraft',
     name: 'Minecraft',
     icon: '🎮',
     categories: [
-      { id: 'minecraft', name: 'Page', path: '/games/minecraft/MinecraftPage' },
-      { id: 'installation', name: 'Installation', path: '/games/minecraft/installation' },
+      {
+        id: 'minecraft',
+        name: 'Page',
+        path: '/games/minecraft/MinecraftPage',
+        keywords: ['minecraft', 'serveur', 'java', 'bedrock'],
+      },
+      {
+        id: 'installation',
+        name: 'Installation',
+        path: '/games/minecraft/installation',
+        keywords: ['installation', 'java', 'serveur', 'configuration système', 'prérequis'],
+        description: "Guide d'installation d'un serveur Minecraft",
+      },
       { id: 'configuration', name: 'Configuration', path: '/games/minecraft/configuration' },
       { id: 'plugins', name: 'Plugins', path: '/games/minecraft/plugins' },
       { id: 'maintenance', name: 'Maintenance', path: '/games/minecraft/maintenance' },
@@ -31,11 +51,22 @@ const games = [
     name: 'DayZ',
     icon: '🎮',
     categories: [
-      { id: 'dayz', name: 'Page', path: '/games/dayz/DayZPage' },
-      { id: 'setup', name: 'Installation', path: '/games/dayz/setup' },
+      {
+        id: 'setup',
+        name: 'Installation',
+        path: '/games/dayz/setup',
+        keywords: ['installation', 'steam', 'serveur', 'configuration initiale'],
+        description: "Installation et configuration d'un serveur DayZ",
+      },
+      {
+        id: 'mods',
+        name: 'Mods',
+        path: '/games/dayz/mods',
+        keywords: ['mods', 'workshop', 'steam', 'addons', 'personnalisation'],
+        description: 'Gestion des mods sur un serveur DayZ',
+      },
       { id: 'configuration', name: 'Configuration', path: '/games/dayz/configuration' },
       { id: 'performance', name: 'Performance', path: '/games/dayz/performance' },
-      { id: 'mods', name: 'Mods', path: '/games/dayz/mods' },
       { id: 'economy', name: 'Économie', path: '/games/dayz/economy' },
       { id: 'events', name: 'Events', path: '/games/dayz/events' },
       { id: 'security', name: 'Sécurité', path: '/games/dayz/security' },
@@ -77,9 +108,48 @@ const games = [
 
 export const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [openCategories, setOpenCategories] = useState<string[]>([]);
   const location = useLocation();
 
   const activeGame = games.find((game) => location.pathname.includes(`/games/${game.id}`));
+
+  // Fonction de recherche améliorée
+  const filteredGames = useMemo(() => {
+    const query = searchQuery.toLowerCase().trim();
+    if (!query) return games;
+    return games
+      .map((game) => ({
+        ...game,
+        categories: game.categories.filter((category) => {
+          const nameMatch = category.name.toLowerCase().includes(query);
+          const gameNameMatch = game.name.toLowerCase().includes(query);
+          const keywordMatch = category.keywords?.some((keyword) =>
+            keyword.toLowerCase().includes(query)
+          );
+          const descriptionMatch = category.description?.toLowerCase().includes(query);
+          return nameMatch || gameNameMatch || keywordMatch || descriptionMatch;
+        }),
+      }))
+      .filter((game) => game.categories.length > 0);
+  }, [searchQuery]);
+
+  // Gérer l'ouverture initiale et la navigation
+  useEffect(() => {
+    if (activeGame && !openCategories.includes(activeGame.id)) {
+      setOpenCategories((prev) => [...prev, activeGame.id]);
+    }
+  }, [location.pathname]);
+
+  // Gérer la recherche
+  useEffect(() => {
+    if (searchQuery) {
+      const searchResults = filteredGames.map((game) => game.id);
+      setOpenCategories(searchResults);
+    }
+  }, [searchQuery]);
+
+  const noResults = searchQuery.trim() !== '' && filteredGames.length === 0;
 
   return (
     <>
@@ -113,6 +183,8 @@ export const Sidebar = () => {
               <input
                 type="search"
                 placeholder="Rechercher..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full pl-10 pr-4 py-2 bg-background/50 rounded-lg border border-white/10 focus:outline-none focus:ring-2 focus:ring-primary/50"
               />
             </div>
@@ -120,40 +192,61 @@ export const Sidebar = () => {
 
           <div className="flex-1 overflow-y-auto scrollbar-thin">
             <div className="p-4">
-              <Accordion
-                type="multiple"
-                className="w-full"
-                defaultValue={activeGame ? [activeGame.id] : []}
-              >
-                {games.map((game) => (
-                  <AccordionItem key={game.id} value={game.id} className="border-white/10">
-                    <AccordionTrigger className="hover:no-underline py-2">
-                      <div className="flex items-center gap-3">
-                        <span className="text-xl">{game.icon}</span>
-                        <span>{game.name}</span>
-                      </div>
-                    </AccordionTrigger>
-                    <AccordionContent>
-                      <div className="space-y-1 ml-9">
-                        {game.categories.map((category) => (
-                          <Link
-                            key={category.id}
-                            to={category.path}
-                            className={cn(
-                              'block py-2 px-2 rounded-lg transition-colors',
-                              location.pathname === category.path
-                                ? 'bg-accent text-accent-foreground'
-                                : 'hover:bg-white/5'
-                            )}
-                          >
-                            {category.name}
-                          </Link>
-                        ))}
-                      </div>
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
+              {noResults ? (
+                <div className="text-center text-muted-foreground py-4">
+                  Aucun résultat trouvé pour "{searchQuery}"
+                </div>
+              ) : (
+                <Accordion
+                  type="multiple"
+                  className="w-full"
+                  value={openCategories}
+                  onValueChange={(value) => {
+                    // Maintenir la catégorie active toujours ouverte
+                    if (activeGame && !value.includes(activeGame.id)) {
+                      setOpenCategories([...value, activeGame.id]);
+                    } else {
+                      setOpenCategories(value);
+                    }
+                  }}
+                >
+                  {filteredGames.map((game) => (
+                    <AccordionItem key={game.id} value={game.id} className="border-white/10">
+                      <AccordionTrigger className="hover:no-underline py-2">
+                        <div className="flex items-center gap-3">
+                          <span className="text-xl">{game.icon}</span>
+                          <span>{game.name}</span>
+                        </div>
+                      </AccordionTrigger>
+                      <AccordionContent>
+                        <div className="space-y-1 ml-9">
+                          {game.categories.map((category) => (
+                            <Link
+                              key={category.id}
+                              to={category.path}
+                              className={cn(
+                                'block py-2 px-2 rounded-lg transition-colors',
+                                location.pathname === category.path
+                                  ? 'bg-accent text-accent-foreground'
+                                  : 'hover:bg-white/5'
+                              )}
+                            >
+                              <div>
+                                <div>{category.name}</div>
+                                {searchQuery && category.description && (
+                                  <div className="text-sm text-muted-foreground">
+                                    {category.description}
+                                  </div>
+                                )}
+                              </div>
+                            </Link>
+                          ))}
+                        </div>
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              )}
             </div>
           </div>
 
