@@ -7,24 +7,28 @@ const games = [
     name: 'Minecraft',
     description: 'Configurez et gérez votre serveur Minecraft facilement.',
     icon: '🎮',
+    path: '/games/minecraft/MinecraftPage',
   },
   {
     id: 'dayz',
     name: 'DayZ',
     description: 'Hébergez votre propre serveur DayZ et personnalisez-le selon vos besoins.',
     icon: '🎮',
+    path: '/games/dayz/DayZPage',
   },
   {
     id: 'fivem',
     name: 'FiveM',
     description: 'Créez et gérez votre serveur FiveM pour GTA V multijoueur.',
     icon: '🎮',
+    path: '/games/fivem/FiveMPage',
   },
   {
     id: 'cs2',
     name: 'Counter-Strike 2',
     description: 'Configurez et optimisez votre serveur CS2 pour le jeu compétitif.',
     icon: '🎮',
+    path: '/games/cs2/CS2Page',
   },
 ];
 
@@ -43,7 +47,7 @@ export const Index = () => {
 
         <div className="grid md:grid-cols-2 gap-6">
           {games.map((game) => (
-            <Link key={game.id} to={`/games/${game.id}`}>
+            <Link key={game.id} to={game.path}>
               <div className="game-card h-full">
                 <div className="flex items-start gap-4">
                   <span className="text-3xl">{game.icon}</span>
