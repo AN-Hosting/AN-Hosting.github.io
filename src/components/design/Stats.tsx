@@ -17,7 +17,9 @@ export const Stats = () => {
 
         <Card className="game-card">
           <CardHeader>
-            <CardTitle className="text-sm font-medium text-muted-foreground">Active Servers</CardTitle>
+            <CardTitle className="text-sm font-medium text-muted-foreground">
+              Active Servers
+            </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">567</div>
@@ -37,7 +39,9 @@ export const Stats = () => {
 
         <Card className="game-card">
           <CardHeader>
-            <CardTitle className="text-sm font-medium text-muted-foreground">Response Time</CardTitle>
+            <CardTitle className="text-sm font-medium text-muted-foreground">
+              Response Time
+            </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">45ms</div>

@@ -1,14 +1,14 @@
-import { Layout } from '@/components/layout/Layout';
-import { Typography } from '@/components/design/Typography';
-import { ColorPalettes } from '@/components/design/ColorPalettes';
-import { GradientCards } from '@/components/design/GradientCards';
+import { Alerts } from '@/components/design/Alerts';
 import { Buttons } from '@/components/design/Buttons';
 import { Cards } from '@/components/design/Cards';
-import { Alerts } from '@/components/design/Alerts';
-import { Tags } from '@/components/design/Tags';
 import { CodeBlocks } from '@/components/design/CodeBlocks';
+import { ColorPalettes } from '@/components/design/ColorPalettes';
+import { GradientCards } from '@/components/design/GradientCards';
 import { GridLayouts } from '@/components/design/GridLayouts';
 import { Stats } from '@/components/design/Stats';
+import { Tags } from '@/components/design/Tags';
+import { Typography } from '@/components/design/Typography';
+import { Layout } from '@/components/layout/Layout';
 
 export const DesignSystem = () => {
   return (

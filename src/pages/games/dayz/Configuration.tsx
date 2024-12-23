@@ -1,7 +1,7 @@
-import { Layout } from '@/components/layout/Layout';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert';
 import { Info } from 'lucide-react';
+import { Layout } from '@/components/layout/Layout';
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export const DayZConfiguration = () => {
   return (
@@ -13,8 +13,8 @@ export const DayZConfiguration = () => {
           <Info className="h-4 w-4" />
           <AlertTitle>Important</AlertTitle>
           <AlertDescription>
-            Toutes les modifications doivent être effectuées via l'onglet "Fichiers" du panel Pterodactyl.
-            N'oubliez pas de redémarrer votre serveur après chaque modification.
+            Toutes les modifications doivent être effectuées via l'onglet "Fichiers" du panel
+            Pterodactyl. N'oubliez pas de redémarrer votre serveur après chaque modification.
           </AlertDescription>
         </Alert>
 
@@ -90,4 +90,4 @@ enableDebugMonitor = 1;`}</code>
       </div>
     </Layout>
   );
-}; 
+};

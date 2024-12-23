@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { type ThemeMode, themes } from '@/lib/themes';
+import { themes, type ThemeMode } from '@/lib/themes';
 
 type ThemeContextType = {
   theme: ThemeMode;
@@ -15,18 +15,14 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
 
-  return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
-      {children}
-    </ThemeContext.Provider>
-  );
+  return <ThemeContext.Provider value={{ theme, setTheme }}>{children}</ThemeContext.Provider>;
 }
 
 // Exportation par défaut pour maintenir la cohérence
 const useTheme = () => {
   const context = useContext(ThemeContext);
   if (context === undefined) {
-    throw new Error('useTheme doit être utilisé à l\'intérieur d\'un ThemeProvider');
+    throw new Error("useTheme doit être utilisé à l'intérieur d'un ThemeProvider");
   }
   return context;
 };

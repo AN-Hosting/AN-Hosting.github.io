@@ -8,7 +8,9 @@
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "format": "prettier --write \"**/*.{ts,tsx,md,json,js,jsx,css,scss}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,md,json,js,jsx,css,scss}\""
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",

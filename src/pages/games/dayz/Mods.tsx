@@ -1,32 +1,32 @@
-import { Layout } from '@/components/layout/Layout';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert';
 import { Info } from 'lucide-react';
+import { Layout } from '@/components/layout/Layout';
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { Badge } from '@/components/ui/badge';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export const DayZMods = () => {
   const recommendedMods = [
     {
-      name: "CF",
-      description: "Community Framework - requis pour la plupart des mods",
-      type: "Essentiel",
-      workshopId: "1559212036",
-      installation: "Automatique via le panel"
+      name: 'CF',
+      description: 'Community Framework - requis pour la plupart des mods',
+      type: 'Essentiel',
+      workshopId: '1559212036',
+      installation: 'Automatique via le panel',
     },
     {
-      name: "Code Lock",
-      description: "Système de verrouillage par code pour les bases",
-      type: "Sécurité",
-      workshopId: "1646187754",
-      installation: "Via gestionnaire de mods"
+      name: 'Code Lock',
+      description: 'Système de verrouillage par code pour les bases',
+      type: 'Sécurité',
+      workshopId: '1646187754',
+      installation: 'Via gestionnaire de mods',
     },
     {
-      name: "Banking",
-      description: "Système économique avec ATM",
-      type: "Économie",
-      workshopId: "1824053882",
-      installation: "Via gestionnaire de mods"
-    }
+      name: 'Banking',
+      description: 'Système économique avec ATM',
+      type: 'Économie',
+      workshopId: '1824053882',
+      installation: 'Via gestionnaire de mods',
+    },
   ];
 
   return (
@@ -38,8 +38,9 @@ export const DayZMods = () => {
           <Info className="h-4 w-4" />
           <AlertTitle>Important</AlertTitle>
           <AlertDescription>
-            L'installation des mods sur Pterodactyl est simplifiée grâce au gestionnaire de mods intégré.
-            Assurez-vous que votre serveur est arrêté avant d'installer ou de mettre à jour des mods.
+            L'installation des mods sur Pterodactyl est simplifiée grâce au gestionnaire de mods
+            intégré. Assurez-vous que votre serveur est arrêté avant d'installer ou de mettre à jour
+            des mods.
           </AlertDescription>
         </Alert>
 
@@ -57,9 +58,7 @@ export const DayZMods = () => {
                 <CardContent>
                   <p>{mod.description}</p>
                   <div className="flex justify-between items-center mt-4">
-                    <p className="text-sm text-muted-foreground">
-                      Workshop ID: {mod.workshopId}
-                    </p>
+                    <p className="text-sm text-muted-foreground">Workshop ID: {mod.workshopId}</p>
                     <Badge variant="outline">{mod.installation}</Badge>
                   </div>
                 </CardContent>

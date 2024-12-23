@@ -1,6 +1,6 @@
+import { CheckCircle, Info } from 'lucide-react';
 import { Layout } from '@/components/layout/Layout';
-import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert';
-import { Info, CheckCircle } from 'lucide-react';
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export const DayZSetup = () => {
@@ -13,9 +13,8 @@ export const DayZSetup = () => {
           <Info className="h-4 w-4" />
           <AlertTitle>Prérequis</AlertTitle>
           <AlertDescription>
-            - Un compte AN Hosting avec accès au panel Pterodactyl
-            - Un serveur avec au moins 16GB de RAM
-            - Un minimum de 50GB d'espace disque
+            - Un compte AN Hosting avec accès au panel Pterodactyl - Un serveur avec au moins 16GB
+            de RAM - Un minimum de 50GB d'espace disque
           </AlertDescription>
         </Alert>
 
@@ -67,13 +66,15 @@ export const DayZSetup = () => {
 
         <section className="space-y-4">
           <h2 className="text-2xl font-semibold">Configuration du serveur</h2>
-          
+
           <Card className="glass-card">
             <CardHeader>
               <CardTitle>Fichier serverDZ.cfg</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="mb-4">Dans l'onglet "Fichiers" du panel, modifiez le fichier serverDZ.cfg :</p>
+              <p className="mb-4">
+                Dans l'onglet "Fichiers" du panel, modifiez le fichier serverDZ.cfg :
+              </p>
               <pre className="code-block">
                 <code>{`hostname = "Mon Serveur DayZ";
 password = "";  // Mot de passe du serveur (optionnel)
@@ -91,8 +92,9 @@ template = "dayzOffline.chernarusplus";  // ou autre map`}</code>
           <Info className="h-4 w-4" />
           <AlertTitle>Conseil</AlertTitle>
           <AlertDescription>
-            Une fois la configuration terminée, utilisez le bouton "Démarrer" dans le panel pour lancer votre serveur. 
-            Le premier démarrage peut prendre plusieurs minutes le temps que les fichiers soient téléchargés.
+            Une fois la configuration terminée, utilisez le bouton "Démarrer" dans le panel pour
+            lancer votre serveur. Le premier démarrage peut prendre plusieurs minutes le temps que
+            les fichiers soient téléchargés.
           </AlertDescription>
         </Alert>
       </div>

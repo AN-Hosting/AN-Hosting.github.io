@@ -1,44 +1,42 @@
 import { Layout } from '@/components/layout/Layout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
-export const MinecraftPage = () => {
+export const FiveMPage = () => {
   return (
     <Layout>
       <div className="max-w-4xl mx-auto space-y-8">
         <h1 className="text-4xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400">
-          Minecraft Server Setup Guide
+          FiveM Server Setup Guide
         </h1>
 
         <Card className="glass-card">
           <CardHeader>
-            <CardTitle>Quick Start Guide</CardTitle>
+            <CardTitle>Installation Steps</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            <p>Follow these steps to set up your Minecraft server:</p>
             <ol className="list-decimal list-inside space-y-2">
-              <li>Download the latest version of Minecraft Server</li>
-              <li>Create a new directory for your server files</li>
-              <li>Configure server.properties file</li>
-              <li>Allocate sufficient RAM</li>
-              <li>Port forward 25565 (default port)</li>
+              <li>Download FiveM server artifacts</li>
+              <li>Configure server.cfg</li>
+              <li>Set up database connection</li>
+              <li>Install essential resources</li>
+              <li>Configure permissions</li>
             </ol>
           </CardContent>
         </Card>
 
         <Card className="glass-card">
           <CardHeader>
-            <CardTitle>Server Configuration</CardTitle>
+            <CardTitle>Basic server.cfg</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="code-block">
               <pre>
-                {`# Basic server settings
-server-port=25565
-gamemode=survival
-difficulty=normal
-max-players=20
-view-distance=10
-spawn-protection=16`}
+                {`# Server configuration
+sv_maxclients 32
+sv_licenseKey "your_license_key"
+sets sv_projectName "My FiveM Server"
+sets sv_projectDesc "A great RP experience"
+load_server_icon myLogo.png`}
               </pre>
             </div>
           </CardContent>

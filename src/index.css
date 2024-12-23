@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
 @layer base {
   :root {
     /* Light Theme with improved text contrast */
@@ -27,7 +27,7 @@
     --radius: 0.75rem;
   }
 
-  [data-theme="dark"] {
+  [data-theme='dark'] {
     --background: 222 25% 11%;
     --foreground: 220 13% 95%;
     --card: 222 25% 11%;
@@ -49,19 +49,21 @@
     --ring: 217 91% 60%;
   }
 }
- 
+
 @layer base {
   * {
     @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    font-feature-settings:
+      'rlig' 1,
+      'calt' 1;
   }
 }
 
 .glass-card {
-  @apply bg-black/20 backdrop-blur-lg border border-white/10 rounded-lg;
+  @apply rounded-lg border border-white/10 bg-black/20 backdrop-blur-lg;
 }
 
 .neon-border {
@@ -69,7 +71,7 @@
 }
 
 .hover-glow {
-  @apply transition-all duration-300 hover:shadow-[0_0_20px_rgba(59,130,246,0.4)] hover:border-primary/80;
+  @apply transition-all duration-300 hover:border-primary/80 hover:shadow-[0_0_20px_rgba(59,130,246,0.4)];
 }
 
 .game-card {
@@ -77,22 +79,22 @@
 }
 
 .code-block {
-  @apply bg-black/40 border border-white/10 rounded-lg p-4 font-mono text-sm;
+  @apply rounded-lg border border-white/10 bg-black/40 p-4 font-mono text-sm;
 }
 
 /* DayZ Specific Styles */
 .dayz-style-1 {
-  @apply bg-gradient-to-br from-[#0e141c] to-[#181a24] text-[#f3f4f6] border-[#3b82f6];
+  @apply border-[#3b82f6] bg-gradient-to-br from-[#0e141c] to-[#181a24] text-[#f3f4f6];
 }
 
 .dayz-style-2 {
-  @apply bg-gradient-to-br from-[#181a24] to-[#0e141c] text-[#f3f4f6] border-[#3b82f6];
+  @apply border-[#3b82f6] bg-gradient-to-br from-[#181a24] to-[#0e141c] text-[#f3f4f6];
 }
 
 .dayz-style-3 {
-  @apply bg-gradient-to-br from-[#3b82f6] to-[#60a5fa] text-white border-[#60a5fa];
+  @apply border-[#60a5fa] bg-gradient-to-br from-[#3b82f6] to-[#60a5fa] text-white;
 }
 
 .dayz-style-4 {
-  @apply bg-gradient-to-br from-[#60a5fa] to-[#3b82f6] text-white border-[#3b82f6];
+  @apply border-[#3b82f6] bg-gradient-to-br from-[#60a5fa] to-[#3b82f6] text-white;
 }

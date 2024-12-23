@@ -13,7 +13,7 @@ export const Cards = () => {
             <p>Carte basique avec titre et contenu.</p>
           </CardContent>
         </Card>
-        
+
         <Card className="glass-card">
           <CardHeader>
             <CardTitle>Carte en verre</CardTitle>

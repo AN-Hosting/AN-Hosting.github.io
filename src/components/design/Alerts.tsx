@@ -1,4 +1,4 @@
-import { Info, Check, AlertTriangle } from 'lucide-react';
+import { AlertTriangle, Check, Info } from 'lucide-react';
 
 export const Alerts = () => {
   return (

@@ -1,7 +1,7 @@
-import { Layout } from '@/components/layout/Layout';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert';
 import { Info, Settings } from 'lucide-react';
+import { Layout } from '@/components/layout/Layout';
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export const DayZPerformance = () => {
   return (
@@ -13,7 +13,8 @@ export const DayZPerformance = () => {
           <Info className="h-4 w-4" />
           <AlertTitle>Optimisation</AlertTitle>
           <AlertDescription>
-            Ces paramètres peuvent être ajustés dans le panel Pterodactyl pour optimiser les performances de votre serveur.
+            Ces paramètres peuvent être ajustés dans le panel Pterodactyl pour optimiser les
+            performances de votre serveur.
           </AlertDescription>
         </Alert>
 
@@ -70,4 +71,4 @@ lightingConfig = 0;`}</code>
       </div>
     </Layout>
   );
-}; 
+};

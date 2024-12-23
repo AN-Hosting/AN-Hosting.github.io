@@ -9,7 +9,9 @@ export const Typography = () => {
         <h4 className="text-2xl font-medium">Titre 4</h4>
         <p className="text-xl">Texte large pour contenu important.</p>
         <p className="text-base">Texte normal pour contenu général et documentation.</p>
-        <p className="text-sm text-muted-foreground">Petit texte pour légendes et informations secondaires.</p>
+        <p className="text-sm text-muted-foreground">
+          Petit texte pour légendes et informations secondaires.
+        </p>
       </div>
     </section>
   );

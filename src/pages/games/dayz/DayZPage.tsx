@@ -1,8 +1,19 @@
+import {
+  AlertTriangle,
+  ArrowRight,
+  ChevronRight,
+  Hash,
+  Link as LinkIcon,
+  Package,
+  Server,
+  Settings,
+  Shield,
+  Terminal,
+} from 'lucide-react';
 import { Layout } from '@/components/layout/Layout';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Server, Package, Shield, AlertTriangle, Terminal, Settings, Link as LinkIcon, Hash, ChevronRight } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export const DayZPage = () => {
   return (
@@ -11,12 +22,8 @@ export const DayZPage = () => {
         {/* Hero Section - Style 1 */}
         <div className="relative p-8 rounded-lg overflow-hidden glass-card neon-border dayz-style-1">
           <div className="relative z-10 space-y-4">
-            <h1 className="text-5xl font-bold">
-              Setup Guide
-            </h1>
-            <p className="text-xl">
-              Complete guide to hosting and managing your DayZ server
-            </p>
+            <h1 className="text-5xl font-bold">Setup Guide</h1>
+            <p className="text-xl">Complete guide to hosting and managing your DayZ server</p>
           </div>
         </div>
 
@@ -26,7 +33,7 @@ export const DayZPage = () => {
             { label: 'Active Servers', value: '2,500+' },
             { label: 'Players Online', value: '150K+' },
             { label: 'Avg. Uptime', value: '99.9%' },
-            { label: 'Mod Support', value: '1000+' }
+            { label: 'Mod Support', value: '1000+' },
           ].map((stat, i) => (
             <Card key={i} className="game-card dayz-style-2 text-center">
               <CardContent className="pt-6">
@@ -42,7 +49,7 @@ export const DayZPage = () => {
           {[
             { title: 'Server Setup', icon: Server, desc: 'Initial configuration' },
             { title: 'Mod Management', icon: Package, desc: 'Install and manage mods' },
-            { title: 'Security', icon: Shield, desc: 'Secure your server' }
+            { title: 'Security', icon: Shield, desc: 'Secure your server' },
           ].map((item, i) => (
             <Card key={i} className="game-card dayz-style-3 group cursor-pointer">
               <CardHeader>
@@ -73,13 +80,15 @@ export const DayZPage = () => {
           <div className="space-y-4">
             <h2 className="text-2xl font-bold text-primary">Getting Started</h2>
             <p className="text-gray-300 leading-relaxed">
-              Setting up a DayZ server requires careful planning and configuration. Follow our step-by-step guide to ensure a smooth setup process.
+              Setting up a DayZ server requires careful planning and configuration. Follow our
+              step-by-step guide to ensure a smooth setup process.
             </p>
           </div>
           <div className="space-y-4">
             <h2 className="text-2xl font-bold text-primary">Requirements</h2>
             <p className="text-gray-300 leading-relaxed">
-              Before starting, ensure your system meets the minimum requirements for hosting a DayZ server.
+              Before starting, ensure your system meets the minimum requirements for hosting a DayZ
+              server.
             </p>
           </div>
         </div>
@@ -106,10 +115,15 @@ export const DayZPage = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {[
             { title: 'Official Documentation', url: 'https://dayz.com/docs' },
-            { title: 'Community Forums', url: 'https://forums.dayz.com' }
+            { title: 'Community Forums', url: 'https://forums.dayz.com' },
           ].map((link, i) => (
-            <a key={i} href={link.url} target="_blank" rel="noopener noreferrer" 
-               className="game-card flex items-center gap-3 p-4 group">
+            <a
+              key={i}
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="game-card flex items-center gap-3 p-4 group"
+            >
               <LinkIcon className="h-5 w-5 text-primary" />
               <span className="flex-grow text-gray-300">{link.title}</span>
               <ChevronRight className="h-4 w-4 text-primary transition-transform group-hover:translate-x-1" />
@@ -123,12 +137,12 @@ export const DayZPage = () => {
             <span className="relative z-10">Get Started</span>
             <div className="absolute inset-0 bg-gradient-to-r from-primary to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity" />
           </Button>
-          
+
           <Button variant="outline" className="relative overflow-hidden group">
             <span className="relative z-10">Documentation</span>
             <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity" />
           </Button>
-          
+
           <Button variant="secondary" className="animate-pulse hover:animate-none">
             Download Files
           </Button>

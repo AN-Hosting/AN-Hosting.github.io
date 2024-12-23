@@ -1,12 +1,12 @@
-import { Button } from "@/components/ui/button";
-import { useTheme } from "./ThemeProvider";
-import { Sun, Moon } from "lucide-react";
+import { Moon, Sun } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from '@/components/ui/dropdown-menu';
+import { useTheme } from './ThemeProvider';
 
 export function ThemeSwitcher() {
   const { theme, setTheme } = useTheme();
@@ -24,12 +24,8 @@ export function ThemeSwitcher() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setTheme('light')}>
-          Clair
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme('dark')}>
-          Sombre
-        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setTheme('light')}>Clair</DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setTheme('dark')}>Sombre</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );

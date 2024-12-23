@@ -1,31 +1,31 @@
-import { Layout } from '@/components/layout/Layout';
 import { Link } from 'react-router-dom';
+import { Layout } from '@/components/layout/Layout';
 
 const games = [
   {
     id: 'minecraft',
     name: 'Minecraft',
     description: 'Configurez et gérez votre serveur Minecraft facilement.',
-    icon: '🎮'
+    icon: '🎮',
   },
   {
     id: 'dayz',
     name: 'DayZ',
     description: 'Hébergez votre propre serveur DayZ et personnalisez-le selon vos besoins.',
-    icon: '🎮'
+    icon: '🎮',
   },
   {
     id: 'fivem',
     name: 'FiveM',
     description: 'Créez et gérez votre serveur FiveM pour GTA V multijoueur.',
-    icon: '🎮'
+    icon: '🎮',
   },
   {
     id: 'cs2',
     name: 'Counter-Strike 2',
     description: 'Configurez et optimisez votre serveur CS2 pour le jeu compétitif.',
-    icon: '🎮'
-  }
+    icon: '🎮',
+  },
 ];
 
 export const Index = () => {
@@ -63,7 +63,11 @@ export const Index = () => {
             Vous ne trouvez pas ce que vous cherchez ? Consultez notre discord communautaires.
           </p>
           <div className="flex justify-center gap-4">
-            <a href="https://discord.gg/anhosting" target="_blank" className="px-4 py-2 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors">
+            <a
+              href="https://discord.gg/anhosting"
+              target="_blank"
+              className="px-4 py-2 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+            >
               Visiter le Discord
             </a>
             {/* <button className="px-4 py-2 rounded-lg border border-primary/50 hover:bg-primary/10 transition-colors">
