@@ -162,3 +162,31 @@ We don't support custom domains (yet). If you want to deploy your project under 
 | Counter-Strike 2 | Compétitif      | Configuration                 | /games/cs2/competitive#setup                         |
 | Counter-Strike 2 | Compétitif      | Tournois                      | /games/cs2/competitive#tournaments                   |
 | Counter-Strike 2 | Compétitif      | Statistiques                  | /games/cs2/competitive#stats                         |
+
+## Déploiement
+
+Le site est automatiquement déployé sur GitHub Pages à chaque push sur la branche main.
+
+### Déploiement manuel
+
+Pour déployer manuellement :
+
+```bash
+# Installation des dépendances
+npm install
+
+# Build du projet
+npm run build
+
+# Déploiement sur GitHub Pages
+npm run deploy
+```
+
+### Configuration requise
+
+- Node.js 18 ou supérieur
+- npm 9 ou supérieur
+
+### Variables d'environnement
+
+Aucune variable d'environnement n'est requise pour le déploiement.
