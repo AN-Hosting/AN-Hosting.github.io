@@ -1,6 +1,3 @@
-import { Gamepad, Menu, Palette, Search, Settings, X } from 'lucide-react';
-import { useEffect, useMemo, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
 import {
   Accordion,
   AccordionContent,
@@ -8,6 +5,9 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { cn } from '@/lib/utils';
+import { Gamepad, Menu, Search, X } from 'lucide-react';
+import { useEffect, useMemo, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { ThemeSwitcher } from '../ThemeSwitcher';
 
 // Type pour les mots-clés de recherche
@@ -250,7 +250,7 @@ export const Sidebar = () => {
             </div>
           </div>
 
-          <div className="p-4 border-t border-white/10">
+          {/* <div className="p-4 border-t border-white/10">
             <div className="space-y-1">
               <Link
                 to="/design-system"
@@ -267,7 +267,7 @@ export const Sidebar = () => {
                 <span>Administration</span>
               </Link>
             </div>
-          </div>
+          </div> */}
         </div>
       </aside>
     </>
